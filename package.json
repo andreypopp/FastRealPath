@@ -4,27 +4,20 @@
   "description": "Beta Release: Wrapper around fast C native realpath. Low startup time makes this great for build scripts.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gcc -o ./.bin/realpath -x c ./realpath.c",
     "test": "echo \"No test\""
+  },
+  "esy": {
+    "build": [
+      "gcc -o $cur__bin/realpath -x c ./realpath.c"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/reasonml/FastRealPath.git"
   },
-  "bin": {
-    "realpath": "./.bin/realpath"
-  },
   "keywords": [
     "realpath"
   ],
-  "exportedEnvVars": {
-    "PATH": {
-      "val": "./bin",
-      "resolveAsRelativePath": true,
-      "global": true,
-      "globalCollisionBehavior": "joinPath"
-    }
-  },
   "author": "",
   "license": "MIT",
   "bugs": {
